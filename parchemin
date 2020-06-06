@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require "dry/cli"
+require_relative "lib/commands"
+
+module Parchemin
+  module CLI
+    module Commands
+      extend Dry::CLI::Registry
+
+      register "version", Version, aliases: ["v", "-v", "--version"]
+      register "read",    Read, aliases: ["r", "-r", "--read"]
+      register "color all", Color::Colors, aliases: ["c", "-c", "--colors"]
+      register "color modes", Color::Modes, aliases: ["m", "-m", "--color-modes"]
+      register "color samples", Color::Samples, aliases: ["s", "-s", "--color-samples"]
+      register "color disabled", Color::Disabled, aliases: ["d", "-d", "--disabled-colorization"]
+    end
+  end
+end
+
+Dry::CLI.new(Parchemin::CLI::Commands).call
