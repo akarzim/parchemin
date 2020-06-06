@@ -138,6 +138,7 @@ Project Link: <https://github.com/akarzim/parchemin>
 
 ## Acknowledgements
 
+* [Gruvbox][gruvbox] colorscheme
 * [Larry Sanger][globewalldesk] for [this issue on Colorize][colorize-issue]
 * [Othneil Drew][othneildrew] for [this readme template][readme-template]
 
@@ -155,6 +156,7 @@ Project Link: <https://github.com/akarzim/parchemin>
 [product-screenshot]: images/screenshot.png
 [dry-cli]: https://dry-rb.org/gems/dry-cli/0.6/
 [colorize]: https://github.com/fazibear/colorize
+[gruvbox]: https://github.com/morhetz/gruvbox
 [globewalldesk]: https://gitlab.com/globewalldesk
 [colorize-issue]: https://github.com/fazibear/colorize/issues/66
 [othneildrew]: https://github.com/othneildrew
