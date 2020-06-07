@@ -2,22 +2,23 @@ require_relative "../sepia"
 
 module Strategy
   class Random
-    def initialize(io:, dirpath:, **deps)
+    def initialize(io:, dirpath:, mode:, **deps)
       @io = io
       @dirpath = dirpath
+      @mode = mode
       @project_klass = deps.fetch(:project, Project)
     end
 
     def call
       lines.map do |line|
         color = String.colors.sample
-        project.extract_line(line).colorize(color)
+        project.extract_line(line).colorize(color: color, mode: mode)
       end.join
     end
 
     private
 
-    attr_reader :io, :dirpath, :project_klass
+    attr_reader :io, :dirpath, :mode, :project_klass
 
     def lines
       io.readlines

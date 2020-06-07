@@ -4,9 +4,10 @@ require_relative "../sepia"
 
 module Strategy
   class Scratch
-    def initialize(io:, dirpath:, **deps)
+    def initialize(io:, dirpath:, mode:, **deps)
       @io = io
       @dirpath = dirpath
+      @mode = mode
       @project_klass = deps.fetch(:project, Project)
       @repartition_klass = deps.fetch(:repartition, Repartition)
     end
@@ -19,14 +20,14 @@ module Strategy
         project.extract_line(line).chars.map do |char|
           sample = repartition.call
           color = String.colors[sample]
-          char.colorize(color)
-        end
+          char.colorize(color: color, mode: mode)
+        end.join
       end.join
     end
 
     private
 
-    attr_reader :io, :dirpath, :project_klass, :repartition_klass
+    attr_reader :io, :dirpath, :mode, :project_klass, :repartition_klass
 
     def lines
       io.readlines

@@ -45,7 +45,8 @@
 
 **DISCLAIMER**: This is a toy project to play with the [dry-cli][dry-cli] Ruby gem.
 
-[![Parchemin Screen Shot][product-screenshot]][product-screenshot]
+[![Parchemin Dark][dark-screenshot]][dark-screenshot]
+[![Parchemin Light][light-screenshot]][light-screenshot]
 
 ### Built With
 
@@ -98,11 +99,13 @@ Arguments:
 
 Options:
   --strategy=VALUE, -s VALUE      	# Colorization strategy: (scratch/strata/random/none), default: :random
+  --mode=VALUE, -m VALUE          	# Colorization mode: (dark/light), default: :dark
   --help, -h                      	# Print this help
 
 Examples:
-  parchemin read path/to/file # Run Parchemin from file
-
+  parchemin read path/to/file                     # Run Parchemin on file
+  parchemin read --strategy=strata path/to/file   # Run Parchemin on file with strata strategy
+  parchemin read --mode=light path/to/file        # Run Parchemin on file using light mode
 ```
 
 For now, 4 strategies are available:
@@ -153,7 +156,8 @@ Project Link: <https://github.com/akarzim/parchemin>
 [issues-url]: https://github.com/akarzim/parchemin/issues
 [license-shield]: https://img.shields.io/github/license/akarzim/parchemin.svg?style=flat-square
 [license-url]: https://github.com/akarzim/parchemin/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+[dark-screenshot]: images/dark-screenshot.png
+[light-screenshot]: images/light-screenshot.png
 [dry-cli]: https://dry-rb.org/gems/dry-cli/0.6/
 [colorize]: https://github.com/fazibear/colorize
 [gruvbox]: https://github.com/morhetz/gruvbox
